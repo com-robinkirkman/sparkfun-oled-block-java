@@ -9,8 +9,14 @@ import org.junit.Test;
 public class ImageTest {
 	@Test
 	public void testDraw() {
-		Graphics2D g = SFOledImage.get().createGraphics();
+		SFOledImage image = new SFOledImage(true);
+		Graphics2D g = image.createGraphics();
 		g.setColor(Color.WHITE);
-		g.drawOval(0, 0, 64, 48);
+		g.fillOval(0, 0, 64, 48);
+		
+		image = new SFOledImage(false);
+		g.setColor(Color.BLACK);
+		g.fillOval(0, 0, 64, 48);
+		image.paint();
 	}
 }

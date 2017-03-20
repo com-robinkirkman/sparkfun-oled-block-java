@@ -77,7 +77,7 @@ public class SFOledSampleModel extends SampleModel {
 
 	@Override
 	public DataBuffer createDataBuffer() {
-		return SFOledDataBuffer.get();
+		return null;
 	}
 
 

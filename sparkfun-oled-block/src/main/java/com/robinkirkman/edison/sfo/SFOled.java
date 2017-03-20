@@ -8,12 +8,6 @@ public class SFOled {
 	public static final int WIDTH = 64;
 	public static final int HEIGHT = 48;
 	
-	private static BufferedImage bufferedImage = new BufferedImage(
-			new IndexColorModel(1, 2, new byte[] {0, -1}, new byte[] {0,-1}, new byte[] {0,-1}), 
-			SFOledRaster.get(), 
-			true, 
-			null);
-	
 	static {
 		NarSystem.loadLibrary();
 		begin0();

@@ -4,17 +4,15 @@ import java.awt.image.BufferedImage;
 import java.awt.image.IndexColorModel;
 
 public class SFOledImage extends BufferedImage {
-	private static SFOledImage instance = new SFOledImage();
-	public static SFOledImage get() {
-		return instance;
-	}
-	
-	
-	private SFOledImage() {
+	public SFOledImage(boolean immediate) {
 		super(new IndexColorModel(1, 2, new byte[] {0, -1}, new byte[] {0,-1}, new byte[] {0,-1}), 
-				SFOledRaster.get(), 
+				new SFOledRaster(immediate), 
 				true, 
 				null);
 	}
 	
+	public void paint() {
+		SFOledDataBuffer dataBuffer = (SFOledDataBuffer) getRaster().getDataBuffer();
+		SFOled.write(dataBuffer.getBuffer());
+	}
 }
