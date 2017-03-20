@@ -14,5 +14,6 @@ public class SFOledImage extends BufferedImage {
 	public void paint() {
 		SFOledDataBuffer dataBuffer = (SFOledDataBuffer) getRaster().getDataBuffer();
 		SFOled.write(dataBuffer.getBuffer());
+		SFOled.display();
 	}
 }

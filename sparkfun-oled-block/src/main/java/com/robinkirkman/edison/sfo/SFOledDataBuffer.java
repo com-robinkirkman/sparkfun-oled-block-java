@@ -21,8 +21,10 @@ public class SFOledDataBuffer extends DataBuffer {
 	@Override
 	public void setElem(int bank, int i, int val) {
 		buffer[i] = (byte) val;
-		if(immediate)
+		if(immediate) {
 			SFOled.write(buffer);
+			SFOled.display();
+		}
 	}
 	
 	public byte[] getBuffer() {
