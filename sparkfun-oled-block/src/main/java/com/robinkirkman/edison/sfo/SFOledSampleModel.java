@@ -49,7 +49,7 @@ public class SFOledSampleModel extends SampleModel {
 	public void setSample(int x, int y, int b, int s, DataBuffer data) {
 		int idx = x + SFOled.WIDTH * (y / 8);
 		int elem = data.getElem(idx);
-		int mask = 0b10000000 >>> (y % 8);
+		int mask = 0b10000001 >>> (y % 8);
 		if(s == 0)
 			elem &= ~mask;
 		else
