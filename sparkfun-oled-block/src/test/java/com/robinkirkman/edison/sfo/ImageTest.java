@@ -6,6 +6,9 @@ import java.awt.Graphics2D;
 import org.junit.Test;
 
 public class ImageTest {
+	@Test
+	public void nothing() {}
+	
 //	@Test
 	public void testOval() throws Exception {
 		SFOledImage image = new SFOledImage();
