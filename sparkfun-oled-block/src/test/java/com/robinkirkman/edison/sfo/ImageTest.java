@@ -13,5 +13,6 @@ public class ImageTest {
 		Graphics2D g = image.createGraphics();
 		g.setColor(Color.WHITE);
 		g.fillOval(0, 0, 64, 48);
+		image.paint();
 	}
 }
