@@ -16,10 +16,5 @@ public class SFOledImage extends BufferedImage {
 				true, 
 				null);
 	}
-
-	public void display() {
-		SFOled.write(SFOledDataBuffer.get().getBuffer());
-		SFOled.display();
-	}
 	
 }

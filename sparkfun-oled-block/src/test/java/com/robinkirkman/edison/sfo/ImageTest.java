@@ -12,6 +12,5 @@ public class ImageTest {
 		Graphics2D g = SFOledImage.get().createGraphics();
 		g.setColor(Color.WHITE);
 		g.drawLine(0, 0, 63, 47);
-		SFOledImage.get().display();
 	}
 }
