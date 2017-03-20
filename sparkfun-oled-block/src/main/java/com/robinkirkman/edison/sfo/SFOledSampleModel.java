@@ -41,7 +41,7 @@ public class SFOledSampleModel extends SampleModel {
 	@Override
 	public int getSample(int x, int y, int b, DataBuffer data) {
 		int idx = x + SFOled.WIDTH * (y / 8);
-		return (data.getElem(idx) >>> (7 - y % 8)) & 1;
+		return (data.getElem(idx) >>> (y % 8)) & 1;
 	}
 
 
@@ -49,7 +49,7 @@ public class SFOledSampleModel extends SampleModel {
 	public void setSample(int x, int y, int b, int s, DataBuffer data) {
 		int idx = x + SFOled.WIDTH * (y / 8);
 		int elem = data.getElem(idx);
-		int mask = 0b10000001 >>> (y % 8);
+		int mask = 1 << (y % 8);
 		if(s == 0)
 			elem &= ~mask;
 		else
