@@ -12,11 +12,8 @@ public class ImageTest {
 	public void testDraw() {
 		SFOledImage image = new SFOledImage();
 		Graphics2D g = image.createGraphics();
-		g.setColor(Color.WHITE);
-		g.drawOval(0, 0, 64, 48);
-		
-		g.setFont(Font.decode(Font.MONOSPACED).deriveFont(8f));
-		g.drawString("Hello World", 0, 8);
+		g.setFont(Font.decode(Font.SANS_SERIF).deriveFont(8f));
+		g.drawString("Hello World, I am an Edison", 0, 8);
 		
 		image.paint();
 	}
