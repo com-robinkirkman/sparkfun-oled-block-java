@@ -12,7 +12,7 @@ public class SFOledSampleModel extends SampleModel {
 	
 	
 	private SFOledSampleModel() {
-		super(DataBuffer.TYPE_BYTE, SFOled.HEIGHT, SFOled.WIDTH, 1);
+		super(DataBuffer.TYPE_BYTE, SFOled.WIDTH, SFOled.HEIGHT, 1);
 	}
 
 
