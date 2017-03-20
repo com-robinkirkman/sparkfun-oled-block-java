@@ -18,6 +18,7 @@ public class SFOledSwing extends JFrame {
 	
 	public SFOledSwing() {
 		super("SparkFun OLED");
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setSize(256, 192);
 		JPanel p = new JPanel() {
 			@Override
