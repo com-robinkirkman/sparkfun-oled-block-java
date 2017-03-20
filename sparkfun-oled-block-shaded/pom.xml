@@ -9,7 +9,7 @@
 		<relativePath>../sparkfun-oled-block-parent</relativePath>
 	</parent>
 	<properties>
-		<aol>x86-Linux-gpp-jni</aol>
+		<aol>i386-Linux-gpp-jni</aol>
 	</properties>
 	<dependencies>
 		<dependency>
