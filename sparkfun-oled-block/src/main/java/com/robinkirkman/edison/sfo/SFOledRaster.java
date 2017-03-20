@@ -6,7 +6,7 @@ import java.awt.image.MultiPixelPackedSampleModel;
 import java.awt.image.WritableRaster;
 
 public class SFOledRaster extends WritableRaster {
-	public SFOledRaster(boolean immediate) {
-		super(SFOledSampleModel.get(), new SFOledDataBuffer(immediate), new Point(0, 0));
+	public SFOledRaster() {
+		super(SFOledSampleModel.get(), new SFOledDataBuffer(), new Point(0, 0));
 	}
 }

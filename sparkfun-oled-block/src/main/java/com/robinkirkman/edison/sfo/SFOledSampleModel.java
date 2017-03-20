@@ -36,8 +36,13 @@ public class SFOledSampleModel extends SampleModel {
 	public void setDataElements(int x, int y, Object obj, DataBuffer data) {
 		int idx = x + SFOled.WIDTH * (y / 8);
 		byte b = ((byte[]) obj)[0];
-		b <<= y % 8;
-		data.setElem(idx, b);
+		int mask = 1 << (y % 8);
+		int elem = data.getElem(idx);
+		if(b == 0)
+			elem &= ~mask;
+		else
+			elem |= mask;
+		data.setElem(idx, elem);
 	}
 
 

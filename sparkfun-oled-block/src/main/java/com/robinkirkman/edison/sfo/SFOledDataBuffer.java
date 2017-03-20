@@ -4,12 +4,10 @@ import java.awt.image.DataBuffer;
 
 public class SFOledDataBuffer extends DataBuffer {
 	
-	private boolean immediate;
 	private byte[] buffer;
 	
-	public SFOledDataBuffer(boolean immediate) {
+	public SFOledDataBuffer() {
 		super(TYPE_BYTE, SFOled.BUFFER_SIZE);
-		this.immediate = immediate;
 		buffer = new byte[SFOled.BUFFER_SIZE];
 	}
 	
@@ -21,10 +19,6 @@ public class SFOledDataBuffer extends DataBuffer {
 	@Override
 	public void setElem(int bank, int i, int val) {
 		buffer[i] = (byte) val;
-		if(immediate) {
-			SFOled.write(buffer);
-			SFOled.display();
-		}
 	}
 	
 	public byte[] getBuffer() {

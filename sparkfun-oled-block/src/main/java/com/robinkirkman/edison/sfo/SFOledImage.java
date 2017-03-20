@@ -4,9 +4,9 @@ import java.awt.image.BufferedImage;
 import java.awt.image.IndexColorModel;
 
 public class SFOledImage extends BufferedImage {
-	public SFOledImage(boolean immediate) {
+	public SFOledImage() {
 		super(new IndexColorModel(1, 2, new byte[] {0, -1}, new byte[] {0,-1}, new byte[] {0,-1}), 
-				new SFOledRaster(immediate), 
+				new SFOledRaster(), 
 				true, 
 				null);
 	}
