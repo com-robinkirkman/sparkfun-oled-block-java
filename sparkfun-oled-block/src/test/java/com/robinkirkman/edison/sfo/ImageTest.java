@@ -13,10 +13,10 @@ public class ImageTest {
 		SFOledImage image = new SFOledImage();
 		Graphics2D g = image.createGraphics();
 		g.setColor(Color.WHITE);
-		g.fillOval(0, 0, 64, 48);
+		g.drawOval(0, 0, 64, 48);
 		
 		g.setFont(Font.decode("monospace").deriveFont(8f));
-		g.drawString("Hello", 0, 0);
+		g.drawString("Hello World", 0, 8);
 		
 		image.paint();
 	}
