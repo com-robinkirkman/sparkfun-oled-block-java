@@ -15,7 +15,7 @@ public class ImageTest {
 		g.setColor(Color.WHITE);
 		g.fillOval(0, 0, 64, 48);
 		
-		g.setFont(Font.getFont("monospace").deriveFont(8f));
+		g.setFont(Font.decode("monospace").deriveFont(8f));
 		g.drawString("Hello", 0, 0);
 		
 		image.paint();
