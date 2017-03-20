@@ -19,21 +19,6 @@ public class SFOled {
 		begin0();
 	}
 
-	private static boolean get(byte[] buf, int x, int y) {
-		int idx = x + SFOled.WIDTH * (y / 8);
-		byte mask = (byte) (0b10000000 >>> (y % 8));
-		return (buf[idx] & mask) != 0;
-	}
-	
-	private static void set(byte[] buf, int x, int y, boolean v) {
-		int idx = x + SFOled.WIDTH * (y / 8);
-		byte mask = (byte) (0b10000000 >>> (y % 8));
-		if(v)
-			buf[idx] |= mask;
-		else
-			buf[idx] &= ~mask;
-	}
-	
 	public static boolean isUpPressed() { return isUpPressed0(); }
 	public static boolean isDownPressed() { return isDownPressed0(); }
 	public static boolean isLeftPressed() { return isLeftPressed0(); }

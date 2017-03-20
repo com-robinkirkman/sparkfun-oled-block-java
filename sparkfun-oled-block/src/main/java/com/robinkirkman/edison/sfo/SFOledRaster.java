@@ -12,6 +12,6 @@ public class SFOledRaster extends WritableRaster {
 	}
 	
 	private SFOledRaster() {
-		super(new MultiPixelPackedSampleModel(DataBuffer.TYPE_BYTE, SFOled.WIDTH, SFOled.HEIGHT, 1), SFOledDataBuffer.get(), new Point(0, 0));
+		super(SFOledSampleModel.get(), SFOledDataBuffer.get(), new Point(0, 0));
 	}
 }
