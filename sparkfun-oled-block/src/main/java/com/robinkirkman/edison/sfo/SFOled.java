@@ -11,12 +11,12 @@ public class SFOled {
 	private static SFOledSwing swing = null;
 	
 	static {
-		try {
-			NarSystem.loadLibrary();
-			begin0();
-		} catch(Throwable t) {
+		if("true".equals(System.getProperty("oled.swing"))) {
 			swing = new SFOledSwing();
 			swing.setVisible(true);
+		} else {
+			NarSystem.loadLibrary();
+			begin0();
 		}
 	}
 
