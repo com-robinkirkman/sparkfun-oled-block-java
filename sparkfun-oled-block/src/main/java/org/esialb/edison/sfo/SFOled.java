@@ -24,8 +24,13 @@ public class SFOled {
 			swing = new OledSwing();
 			swing.setVisible(true);
 		} else {
-			NarSystem.loadLibrary();
-			begin0();
+			try {
+				NarSystem.loadLibrary();
+				begin0();
+			} catch(Throwable t) {
+				swing = new OledSwing();
+				swing.setVisible(true);
+			}
 		}
 	}
 	
