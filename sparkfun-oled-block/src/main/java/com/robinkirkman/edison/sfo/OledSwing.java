@@ -40,7 +40,7 @@ public class OledSwing extends JFrame {
 			public void keyPressed(KeyEvent e) {
 				switch(e.getKeyCode()) {
 				case KeyEvent.VK_A: a = true; break;
-				case KeyEvent.VK_B: b = true; break;
+				case KeyEvent.VK_Z: b = true; break;
 				case KeyEvent.VK_UP: up = true; break;
 				case KeyEvent.VK_DOWN: down = true; break;
 				case KeyEvent.VK_LEFT: left = true; break;
@@ -53,7 +53,7 @@ public class OledSwing extends JFrame {
 			public void keyReleased(KeyEvent e) {
 				switch(e.getKeyCode()) {
 				case KeyEvent.VK_A: a = false; break;
-				case KeyEvent.VK_B: b = false; break;
+				case KeyEvent.VK_Z: b = false; break;
 				case KeyEvent.VK_UP: up = false; break;
 				case KeyEvent.VK_DOWN: down = false; break;
 				case KeyEvent.VK_LEFT: left = false; break;
