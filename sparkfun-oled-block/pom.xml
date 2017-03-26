@@ -16,6 +16,7 @@
 				<version>3.5.1</version>
 				<extensions>true</extensions>
 				<configuration>
+					<architecture>i386</architecture>
 					<libraries>
 						<library>
 							<type>jni</type>
@@ -23,6 +24,14 @@
 							<linkCPP>true</linkCPP>
 						</library>
 					</libraries>
+					<cpp>
+						<options>
+							<option>-m32</option>
+						</options>
+					</cpp>
+					<linker>
+						<optionSet>-m32</optionSet>
+					</linker>
 				</configuration>
 <!--
 				<executions>

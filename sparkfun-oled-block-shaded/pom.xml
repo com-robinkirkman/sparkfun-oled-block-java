@@ -8,9 +8,6 @@
 		<version>0.0.2-SNAPSHOT</version>
 		<relativePath>../sparkfun-oled-block-parent</relativePath>
 	</parent>
-	<properties>
-		<aol>i386-Linux-gpp-jni</aol>
-	</properties>
 	<dependencies>
 		<dependency>
 			<groupId>com.robinkirkman.edison</groupId>
@@ -22,7 +19,7 @@
 			<groupId>com.robinkirkman.edison</groupId>
 			<artifactId>sparkfun-oled-block</artifactId>
 			<version>0.0.2-SNAPSHOT</version>
-			<classifier>${aol}</classifier>
+			<classifier>i386-Linux-gpp-jni</classifier>
 			<type>nar</type>
 		</dependency>
 		<dependency>
@@ -57,13 +54,4 @@
 			</plugin>
 		</plugins>
 	</build>
-	
-	<profiles>
-		<profile>
-			<id>dev</id>
-			<properties>
-				<aol>amd64-Linux-gpp-jni</aol>
-			</properties>
-		</profile>
-	</profiles>
 </project>
