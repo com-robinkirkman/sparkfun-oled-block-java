@@ -26,6 +26,8 @@ public class Menu {
 	}
 	
 	public int show() {
+		byte[] screenWas = new byte[SFOled.BUFFER_SIZE];
+		SFOled.read(screenWas);
 		OledImage image = new OledImage();
 		Graphics2D g = image.createGraphics();
 		for(;;) {
@@ -56,8 +58,11 @@ public class Menu {
 					top++;
 			} else {
 				MenuItem mi = items.get(pos);
-				if(mi.perform(b))
+				if(mi.perform(b)) {
+					SFOled.write(screenWas);
+					SFOled.display();
 					return pos;
+				}
 			}
 			
 		}
