@@ -11,7 +11,7 @@ public class MenuTestMain {
 				menu2.add(new MenuItem("item " + i + j, MenuItem.RETURN));
 			}
 			
-			menu.add(new MenuItem("item " + i, (b) -> {
+			menu.add(new MenuItem("item " + i, (b, s) -> {
 				menu2.show();
 				return false;
 			}));

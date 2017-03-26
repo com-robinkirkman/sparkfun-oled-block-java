@@ -11,10 +11,10 @@ import com.robinkirkman.edison.sfo.SFOled.Button;
 public class MenuItem {
 	@FunctionalInterface
 	public static interface MenuAction {
-		public boolean perform(Button button);
+		public boolean perform(Button button, MenuItem source);
 	}
 	
-	public static MenuAction RETURN = (b) -> true;
+	public static MenuAction RETURN = (b, s) -> true;
 	
 	protected String text;
 	protected Map<Button, MenuAction> actions = new EnumMap<>(Button.class);
@@ -40,7 +40,15 @@ public class MenuItem {
 		return text;
 	}
 	
+	public void setText(String text) {
+		this.text = text;
+	}
+	
+	public Map<Button, MenuAction> getActions() {
+		return actions;
+	}
+	
 	public boolean perform(Button b) {
-		return actions.getOrDefault(b, RETURN).perform(b);
+		return actions.getOrDefault(b, RETURN).perform(b, this);
 	}
 }
