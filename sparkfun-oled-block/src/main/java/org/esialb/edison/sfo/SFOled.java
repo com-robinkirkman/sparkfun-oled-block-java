@@ -19,6 +19,10 @@ public class SFOled {
 	
 	private static OledSwing swing = null;
 	
+	public static boolean isSwing() {
+		return swing != null;
+	}
+	
 	static {
 		if("true".equals(System.getProperty("oled.swing"))) {
 			swing = new OledSwing();
