@@ -52,10 +52,6 @@ public class SFOled {
 			Map<Button, Boolean> tmp = prev;
 			prev = now;
 			now = tmp;
-			try {
-				Thread.sleep(20);
-			} catch (InterruptedException e) {
-			}
 		}
 	}
 	
