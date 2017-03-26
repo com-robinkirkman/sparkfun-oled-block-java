@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>com.robinkirkman.edison</groupId>
 		<artifactId>sparkfun-oled-block-parent</artifactId>
-		<version>0.0.1</version>
+		<version>0.0.2-SNAPSHOT</version>
 		<relativePath>../sparkfun-oled-block-parent</relativePath>
 	</parent>
 	<properties>
@@ -15,13 +15,13 @@
 		<dependency>
 			<groupId>com.robinkirkman.edison</groupId>
 			<artifactId>sparkfun-oled-block</artifactId>
-			<version>0.0.1</version>
+			<version>0.0.2-SNAPSHOT</version>
 			<type>nar</type>
 		</dependency>
 		<dependency>
 			<groupId>com.robinkirkman.edison</groupId>
 			<artifactId>sparkfun-oled-block</artifactId>
-			<version>0.0.1</version>
+			<version>0.0.2-SNAPSHOT</version>
 			<classifier>${aol}</classifier>
 			<type>nar</type>
 		</dependency>
