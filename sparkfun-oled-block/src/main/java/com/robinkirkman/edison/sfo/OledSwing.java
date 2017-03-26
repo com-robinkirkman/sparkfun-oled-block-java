@@ -10,13 +10,13 @@ import java.awt.event.KeyEvent;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-public class SFOledSwing extends JFrame {
-	private SFOledImage image = new SFOledImage();
+public class OledSwing extends JFrame {
+	private OledImage image = new OledImage();
 	private byte[] buffer = new byte[SFOled.BUFFER_SIZE];
 	
 	private volatile boolean up, down, left, right, select, a, b;
 	
-	public SFOledSwing() {
+	public OledSwing() {
 		super("SparkFun OLED");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setSize(256, 192);
@@ -65,7 +65,7 @@ public class SFOledSwing extends JFrame {
 	}
 	
 	public void display0() {
-		byte[] ibuf = ((SFOledDataBuffer) image.getRaster().getDataBuffer()).getBuffer();
+		byte[] ibuf = ((OledDataBuffer) image.getRaster().getDataBuffer()).getBuffer();
 		System.arraycopy(buffer, 0, ibuf, 0, SFOled.BUFFER_SIZE);
 		EventQueue.invokeLater(this::repaint);
 	}

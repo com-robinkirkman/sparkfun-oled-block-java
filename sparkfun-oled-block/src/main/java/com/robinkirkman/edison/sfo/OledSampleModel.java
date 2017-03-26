@@ -4,14 +4,14 @@ import java.awt.image.DataBuffer;
 import java.awt.image.MultiPixelPackedSampleModel;
 import java.awt.image.SampleModel;
 
-public class SFOledSampleModel extends SampleModel {
-	private static SFOledSampleModel instance = new SFOledSampleModel();
-	public static SFOledSampleModel get() {
+public class OledSampleModel extends SampleModel {
+	private static OledSampleModel instance = new OledSampleModel();
+	public static OledSampleModel get() {
 		return instance;
 	}
 	
 	
-	private SFOledSampleModel() {
+	private OledSampleModel() {
 		super(DataBuffer.TYPE_BYTE, SFOled.WIDTH, SFOled.HEIGHT, 1);
 	}
 

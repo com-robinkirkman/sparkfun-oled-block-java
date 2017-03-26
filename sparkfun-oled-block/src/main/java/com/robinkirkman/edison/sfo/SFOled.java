@@ -2,24 +2,63 @@ package com.robinkirkman.edison.sfo;
 
 import java.awt.image.BufferedImage;
 import java.awt.image.IndexColorModel;
+import java.util.EnumMap;
+import java.util.Map;
+import java.util.Set;
 
 public class SFOled {
 	public static final int BUFFER_SIZE = 384;
 	public static final int WIDTH = 64;
 	public static final int HEIGHT = 48;
 	
-	private static SFOledSwing swing = null;
+	public static enum Button {
+		UP, DOWN, LEFT, RIGHT, SELECT, A, B,
+	}
+	
+	private static OledSwing swing = null;
 	
 	static {
 		if("true".equals(System.getProperty("oled.swing"))) {
-			swing = new SFOledSwing();
+			swing = new OledSwing();
 			swing.setVisible(true);
 		} else {
 			NarSystem.loadLibrary();
 			begin0();
 		}
 	}
-
+	
+	public static Map<Button, Boolean> pressed(Map<Button, Boolean> reuse) {
+		if(reuse == null)
+			reuse = new EnumMap<>(Button.class);
+		reuse.put(Button.UP, isUpPressed());
+		reuse.put(Button.DOWN, isDownPressed());
+		reuse.put(Button.LEFT, isLeftPressed());
+		reuse.put(Button.RIGHT, isRightPressed());
+		reuse.put(Button.SELECT, isSelectPressed());
+		reuse.put(Button.A, isAPressed());
+		reuse.put(Button.B, isBPressed());
+		return reuse;
+	}
+	
+	public static Button awaitClick() {
+		Map<Button, Boolean> prev = new EnumMap<>(Button.class);
+		Map<Button, Boolean> now = new EnumMap<>(Button.class);
+		for(;;) {
+			now = pressed(now);
+			for(Button b : Button.values()) {
+				if(prev.getOrDefault(b, false) && !now.get(b))
+					return b;
+			}
+			Map<Button, Boolean> tmp = prev;
+			prev = now;
+			now = tmp;
+			try {
+				Thread.sleep(20);
+			} catch (InterruptedException e) {
+			}
+		}
+	}
+	
 	public static boolean isUpPressed() { return swing != null ? swing.isUp() : isUpPressed0(); }
 	public static boolean isDownPressed() { return swing != null ? swing.isDown() : isDownPressed0(); }
 	public static boolean isLeftPressed() { return swing != null ? swing.isLeft() : isLeftPressed0(); }

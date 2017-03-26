@@ -2,11 +2,11 @@ package com.robinkirkman.edison.sfo;
 
 import java.awt.image.DataBuffer;
 
-public class SFOledDataBuffer extends DataBuffer {
+public class OledDataBuffer extends DataBuffer {
 	
 	private byte[] buffer;
 	
-	public SFOledDataBuffer() {
+	public OledDataBuffer() {
 		super(TYPE_BYTE, SFOled.BUFFER_SIZE);
 		buffer = new byte[SFOled.BUFFER_SIZE];
 	}

@@ -43,6 +43,15 @@
 					<execution>
 						<phase>package</phase>
 						<goals><goal>shade</goal></goals>
+						<configuration>
+							<artifactSet>
+								<includes>
+									<include>com.robinkirkman.edison:sparkfun-oled-block</include>
+								</includes>
+							</artifactSet>
+							<createSourcesJar>true</createSourcesJar>
+							<promoteTransitiveDependencies>true</promoteTransitiveDependencies>
+						</configuration>
 					</execution>
 				</executions>
 			</plugin>
