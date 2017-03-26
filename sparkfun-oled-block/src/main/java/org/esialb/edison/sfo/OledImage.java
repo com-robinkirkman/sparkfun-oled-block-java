@@ -1,4 +1,4 @@
-package com.robinkirkman.edison.sfo;
+package org.esialb.edison.sfo;
 
 import java.awt.image.BufferedImage;
 import java.awt.image.IndexColorModel;

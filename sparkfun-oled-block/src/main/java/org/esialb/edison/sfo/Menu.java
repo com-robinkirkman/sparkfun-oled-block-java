@@ -1,4 +1,4 @@
-package com.robinkirkman.edison.sfo;
+package org.esialb.edison.sfo;
 
 import java.awt.Color;
 import java.awt.Font;
@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import com.robinkirkman.edison.sfo.SFOled.Button;
+import org.esialb.edison.sfo.SFOled.Button;
 
 public class Menu {
 	protected List<MenuItem> items = new ArrayList<>();

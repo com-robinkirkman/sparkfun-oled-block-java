@@ -1,10 +1,12 @@
-package com.robinkirkman.edison.sfo;
+package org.esialb.edison.sfo;
 
 import java.awt.image.BufferedImage;
 import java.awt.image.IndexColorModel;
 import java.util.EnumMap;
 import java.util.Map;
 import java.util.Set;
+
+import org.esialb.edison.sfo.NarSystem;
 
 public class SFOled {
 	public static final int BUFFER_SIZE = 384;

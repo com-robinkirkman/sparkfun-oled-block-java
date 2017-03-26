@@ -1,6 +1,8 @@
-package com.robinkirkman.edison.sfo;
+package org.esialb.edison.sfo;
 
-import com.robinkirkman.edison.sfo.SFOled.Button;
+import org.esialb.edison.sfo.Menu;
+import org.esialb.edison.sfo.MenuItem;
+import org.esialb.edison.sfo.SFOled.Button;
 
 public class MenuTestMain {
 	public static void main(String[] args) {

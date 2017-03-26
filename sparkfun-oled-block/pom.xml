@@ -20,7 +20,7 @@
 					<libraries>
 						<library>
 							<type>jni</type>
-							<narSystemPackage>com.robinkirkman.edison.sfo</narSystemPackage>
+							<narSystemPackage>org.esialb.edison.sfo</narSystemPackage>
 							<linkCPP>true</linkCPP>
 						</library>
 					</libraries>
@@ -65,7 +65,7 @@
 	</build>
 	
 	<parent>
-		<groupId>com.robinkirkman.edison</groupId>
+		<groupId>org.esialb.edison</groupId>
 		<artifactId>sparkfun-oled-block-parent</artifactId>
 		<version>0.0.2-SNAPSHOT</version>
 		<relativePath>../sparkfun-oled-block-parent</relativePath>

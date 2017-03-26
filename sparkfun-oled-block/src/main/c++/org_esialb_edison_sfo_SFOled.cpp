@@ -1,11 +1,10 @@
-#include "com_robinkirkman_edison_sfo_SFOled.h"
-
 #include "jni.h"
 #include "oled/Edison_OLED.h"
 #include "gpio/gpio.h"
 
 #include <stdlib.h>
 #include <string.h>
+#include "org_esialb_edison_sfo_SFOled.h"
 
 #define BUFFER_SIZE 384
 
@@ -25,111 +24,111 @@ static gpio BUTTON_B(46, INPUT);
 
 
 /*
- * Class:     com_robinkirkman_edison_sfo_SFOled
+ * Class:     org_esialb_edison_sfo_SFOled
  * Method:    isUpPressed0
  * Signature: ()Z
  */
-JNIEXPORT jboolean JNICALL Java_com_robinkirkman_edison_sfo_SFOled_isUpPressed0
+JNIEXPORT jboolean JNICALL Java_org_esialb_edison_sfo_SFOled_isUpPressed0
   (JNIEnv *jni, jclass clazz) {
 	return !BUTTON_UP.pinRead();
 }
 
 /*
- * Class:     com_robinkirkman_edison_sfo_SFOled
+ * Class:     org_esialb_edison_sfo_SFOled
  * Method:    isDownPressed0
  * Signature: ()Z
  */
-JNIEXPORT jboolean JNICALL Java_com_robinkirkman_edison_sfo_SFOled_isDownPressed0
+JNIEXPORT jboolean JNICALL Java_org_esialb_edison_sfo_SFOled_isDownPressed0
   (JNIEnv *jni, jclass clazz) {
 	return !BUTTON_DOWN.pinRead();
 }
 
 /*
- * Class:     com_robinkirkman_edison_sfo_SFOled
+ * Class:     org_esialb_edison_sfo_SFOled
  * Method:    isLeftPressed0
  * Signature: ()Z
  */
-JNIEXPORT jboolean JNICALL Java_com_robinkirkman_edison_sfo_SFOled_isLeftPressed0
+JNIEXPORT jboolean JNICALL Java_org_esialb_edison_sfo_SFOled_isLeftPressed0
   (JNIEnv *jni, jclass clazz) {
 	return !BUTTON_LEFT.pinRead();
 }
 
 /*
- * Class:     com_robinkirkman_edison_sfo_SFOled
+ * Class:     org_esialb_edison_sfo_SFOled
  * Method:    isRightPressed0
  * Signature: ()Z
  */
-JNIEXPORT jboolean JNICALL Java_com_robinkirkman_edison_sfo_SFOled_isRightPressed0
+JNIEXPORT jboolean JNICALL Java_org_esialb_edison_sfo_SFOled_isRightPressed0
   (JNIEnv *jni, jclass clazz) {
 	return !BUTTON_RIGHT.pinRead();
 }
 
 /*
- * Class:     com_robinkirkman_edison_sfo_SFOled
+ * Class:     org_esialb_edison_sfo_SFOled
  * Method:    isSelectPressed0
  * Signature: ()Z
  */
-JNIEXPORT jboolean JNICALL Java_com_robinkirkman_edison_sfo_SFOled_isSelectPressed0
+JNIEXPORT jboolean JNICALL Java_org_esialb_edison_sfo_SFOled_isSelectPressed0
   (JNIEnv *jni, jclass clazz) {
 	return !BUTTON_SELECT.pinRead();
 }
 
 /*
- * Class:     com_robinkirkman_edison_sfo_SFOled
+ * Class:     org_esialb_edison_sfo_SFOled
  * Method:    isAPressed0
  * Signature: ()Z
  */
-JNIEXPORT jboolean JNICALL Java_com_robinkirkman_edison_sfo_SFOled_isAPressed0
+JNIEXPORT jboolean JNICALL Java_org_esialb_edison_sfo_SFOled_isAPressed0
   (JNIEnv *jni, jclass clazz) {
 	return !BUTTON_A.pinRead();
 }
 
 /*
- * Class:     com_robinkirkman_edison_sfo_SFOled
+ * Class:     org_esialb_edison_sfo_SFOled
  * Method:    isBPressed0
  * Signature: ()Z
  */
-JNIEXPORT jboolean JNICALL Java_com_robinkirkman_edison_sfo_SFOled_isBPressed0
+JNIEXPORT jboolean JNICALL Java_org_esialb_edison_sfo_SFOled_isBPressed0
   (JNIEnv *jni, jclass clazz) {
 	return !BUTTON_B.pinRead();
 }
 
 /*
- * Class:     com_robinkirkman_edison_sfo_SFOled
+ * Class:     org_esialb_edison_sfo_SFOled
  * Method:    begin0
  * Signature: ()V
  */
-JNIEXPORT void JNICALL Java_com_robinkirkman_edison_sfo_SFOled_begin0
+JNIEXPORT void JNICALL Java_org_esialb_edison_sfo_SFOled_begin0
   (JNIEnv *jni, jclass clazz) {
 	oled.begin();
 }
 
 /*
- * Class:     com_robinkirkman_edison_sfo_SFOled
+ * Class:     org_esialb_edison_sfo_SFOled
  * Method:    invert0
  * Signature: (Z)V
  */
-JNIEXPORT void JNICALL Java_com_robinkirkman_edison_sfo_SFOled_invert0
+JNIEXPORT void JNICALL Java_org_esialb_edison_sfo_SFOled_invert0
   (JNIEnv *jni, jclass, jboolean invert) {
 	oled.invert(invert);
 }
 
 /*
- * Class:     com_robinkirkman_edison_sfo_SFOled
+ * Class:     org_esialb_edison_sfo_SFOled
  * Method:    display0
  * Signature: ()V
  */
-JNIEXPORT void JNICALL Java_com_robinkirkman_edison_sfo_SFOled_display0
+JNIEXPORT void JNICALL Java_org_esialb_edison_sfo_SFOled_display0
   (JNIEnv *jni, jclass clazz) {
 	oled.display();
 }
 
 /*
- * Class:     com_robinkirkman_edison_sfo_SFOled
+ * Class:     org_esialb_edison_sfo_SFOled
  * Method:    write0
  * Signature: ([BII)V
  */
-JNIEXPORT void JNICALL Java_com_robinkirkman_edison_sfo_SFOled_write0
+JNIEXPORT void JNICALL Java_org_esialb_edison_sfo_SFOled_write0
   (JNIEnv *jni, jclass, jbyteArray b) {
 
 	jboolean isCopy;
@@ -142,11 +141,11 @@ JNIEXPORT void JNICALL Java_com_robinkirkman_edison_sfo_SFOled_write0
 }
 
 /*
- * Class:     com_robinkirkman_edison_sfo_SFOled
+ * Class:     org_esialb_edison_sfo_SFOled
  * Method:    read0
  * Signature: ([BII)V
  */
-JNIEXPORT void JNICALL Java_com_robinkirkman_edison_sfo_SFOled_read0
+JNIEXPORT void JNICALL Java_org_esialb_edison_sfo_SFOled_read0
   (JNIEnv *jni, jclass, jbyteArray b) {
 	jboolean isCopy;
 	jbyte* b_bytes = jni->GetByteArrayElements(b, &isCopy);

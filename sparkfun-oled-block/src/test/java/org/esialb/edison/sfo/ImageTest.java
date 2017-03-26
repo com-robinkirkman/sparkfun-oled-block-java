@@ -1,8 +1,10 @@
-package com.robinkirkman.edison.sfo;
+package org.esialb.edison.sfo;
 
 import java.awt.Color;
 import java.awt.Graphics2D;
 
+import org.esialb.edison.sfo.OledImage;
+import org.esialb.edison.sfo.SFOled;
 import org.junit.Test;
 
 public class ImageTest {

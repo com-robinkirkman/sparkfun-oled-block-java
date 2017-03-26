@@ -3,20 +3,20 @@
 	<modelVersion>4.0.0</modelVersion>
 	<artifactId>sparkfun-oled-block-shaded</artifactId>
 	<parent>
-		<groupId>com.robinkirkman.edison</groupId>
+		<groupId>org.esialb.edison</groupId>
 		<artifactId>sparkfun-oled-block-parent</artifactId>
 		<version>0.0.2-SNAPSHOT</version>
 		<relativePath>../sparkfun-oled-block-parent</relativePath>
 	</parent>
 	<dependencies>
 		<dependency>
-			<groupId>com.robinkirkman.edison</groupId>
+			<groupId>org.esialb.edison</groupId>
 			<artifactId>sparkfun-oled-block</artifactId>
 			<version>0.0.2-SNAPSHOT</version>
 			<type>nar</type>
 		</dependency>
 		<dependency>
-			<groupId>com.robinkirkman.edison</groupId>
+			<groupId>org.esialb.edison</groupId>
 			<artifactId>sparkfun-oled-block</artifactId>
 			<version>0.0.2-SNAPSHOT</version>
 			<classifier>i386-Linux-gpp-jni</classifier>
@@ -43,7 +43,7 @@
 						<configuration>
 							<artifactSet>
 								<includes>
-									<include>com.robinkirkman.edison:sparkfun-oled-block</include>
+									<include>org.esialb.edison:sparkfun-oled-block</include>
 								</includes>
 							</artifactSet>
 							<createSourcesJar>true</createSourcesJar>

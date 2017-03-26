@@ -1,4 +1,4 @@
-package com.robinkirkman.edison.sfo;
+package org.esialb.edison.sfo;
 
 import java.util.Collection;
 import java.util.EnumMap;
@@ -6,7 +6,7 @@ import java.util.EnumSet;
 import java.util.Map;
 import java.util.Set;
 
-import com.robinkirkman.edison.sfo.SFOled.Button;
+import org.esialb.edison.sfo.SFOled.Button;
 
 public class MenuItem {
 	@FunctionalInterface
