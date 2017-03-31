@@ -9,15 +9,19 @@ import java.util.Set;
 import org.esialb.edison.sfo.SFOled.Button;
 
 public class MenuItem {
-	@FunctionalInterface
 	public static interface MenuAction {
 		public boolean perform(Button button, MenuItem source);
 	}
 	
-	public static MenuAction RETURN = (b, s) -> true;
+	public static MenuAction RETURN = new MenuAction() {
+		@Override
+		public boolean perform(Button button, MenuItem source) {
+			return true;
+		}
+	};
 	
 	protected String text;
-	protected Map<Button, MenuAction> actions = new EnumMap<>(Button.class);
+	protected Map<Button, MenuAction> actions = new EnumMap<Button, MenuAction>(Button.class);
 	
 	public MenuItem(String text, Object... buttonActionPairs) {
 		this.text = text;

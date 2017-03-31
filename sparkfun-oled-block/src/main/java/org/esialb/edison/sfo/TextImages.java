@@ -47,7 +47,7 @@ public class TextImages {
 	static List<String> wrappedSplit(int width, String text) {
 		if(text.isEmpty())
 			return Collections.emptyList();
-		List<String> lines = new ArrayList<>();
+		List<String> lines = new ArrayList<String>();
 		String current = "";
 		int idx = 0;
 		while(Character.isWhitespace(text.charAt(idx)))

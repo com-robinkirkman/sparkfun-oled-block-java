@@ -41,7 +41,7 @@ public class SFOled {
 	
 	public static Map<Button, Boolean> pressed(Map<Button, Boolean> reuse) {
 		if(reuse == null)
-			reuse = new EnumMap<>(Button.class);
+			reuse = new EnumMap<Button, Boolean>(Button.class);
 		reuse.put(Button.UP, isUpPressed());
 		reuse.put(Button.DOWN, isDownPressed());
 		reuse.put(Button.LEFT, isLeftPressed());
@@ -53,8 +53,8 @@ public class SFOled {
 	}
 	
 	public static Button awaitClick() {
-		Map<Button, Boolean> prev = new EnumMap<>(Button.class);
-		Map<Button, Boolean> now = new EnumMap<>(Button.class);
+		Map<Button, Boolean> prev = new EnumMap<Button, Boolean>(Button.class);
+		Map<Button, Boolean> now = new EnumMap<Button, Boolean>(Button.class);
 		for(;;) {
 			now = pressed(now);
 			for(Button b : Button.values()) {

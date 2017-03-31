@@ -20,7 +20,7 @@ public class OledSwing extends JFrame {
 		super("SparkFun OLED");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setSize(256, 192);
-		JPanel p = new JPanel() {
+		final JPanel p = new JPanel() {
 			@Override
 			public void paint(Graphics g) {
 				g.drawImage(image, 0, 0, getWidth(), getHeight(), null);
@@ -67,7 +67,12 @@ public class OledSwing extends JFrame {
 	public void display0() {
 		byte[] ibuf = ((OledDataBuffer) image.getRaster().getDataBuffer()).getBuffer();
 		System.arraycopy(buffer, 0, ibuf, 0, SFOled.BUFFER_SIZE);
-		EventQueue.invokeLater(this::repaint);
+		EventQueue.invokeLater(new Runnable() {
+			@Override
+			public void run() {
+				repaint();
+			}
+		});
 	}
 	
 	public void read0(byte[] b) {

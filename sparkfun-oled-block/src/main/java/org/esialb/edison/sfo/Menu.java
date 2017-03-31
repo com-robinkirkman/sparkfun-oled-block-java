@@ -20,17 +20,20 @@ public class Menu {
 			System.exit(-1);
 		
 		Menu menu = new Menu();
-		for(String arg : args) {
-			menu.add(new MenuItem(arg, (b, i) ->  {
-				System.out.print(arg);
-				return true;
+		for(final String arg : args) {
+			menu.add(new MenuItem(arg, new MenuItem.MenuAction() {
+				@Override
+				public boolean perform(Button button, MenuItem source) {
+					System.out.println(arg);
+					return true;
+				}
 			}));
 		}
 		menu.show();
 		System.exit(0);
 	}
 	
-	protected List<MenuItem> items = new ArrayList<>();
+	protected List<MenuItem> items = new ArrayList<MenuItem>();
 	
 	protected int top;
 	protected int pos;
