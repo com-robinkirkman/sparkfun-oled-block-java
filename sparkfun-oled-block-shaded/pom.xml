@@ -60,11 +60,6 @@
 							<goal>shade</goal>
 						</goals>
 						<configuration>
-							<artifactSet>
-								<includes>
-									<include>org.esialb.edison:sparkfun-oled-block</include>
-								</includes>
-							</artifactSet>
 							<createDependencyReducedPom>false</createDependencyReducedPom>
 							<finalName>menu</finalName>
 							<shadedArtifactAttached>true</shadedArtifactAttached>
