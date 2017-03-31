@@ -29,7 +29,7 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
-	
+
 	<build>
 		<plugins>
 			<plugin>
@@ -38,8 +38,11 @@
 				<version>3.0.0</version>
 				<executions>
 					<execution>
+						<id>default-shade</id>
 						<phase>package</phase>
-						<goals><goal>shade</goal></goals>
+						<goals>
+							<goal>shade</goal>
+						</goals>
 						<configuration>
 							<artifactSet>
 								<includes>
@@ -48,6 +51,30 @@
 							</artifactSet>
 							<createSourcesJar>true</createSourcesJar>
 							<promoteTransitiveDependencies>true</promoteTransitiveDependencies>
+						</configuration>
+					</execution>
+					<execution>
+						<id>menu-shade</id>
+						<phase>package</phase>
+						<goals>
+							<goal>shade</goal>
+						</goals>
+						<configuration>
+							<artifactSet>
+								<includes>
+									<include>org.esialb.edison:sparkfun-oled-block</include>
+								</includes>
+							</artifactSet>
+							<createDependencyReducedPom>false</createDependencyReducedPom>
+							<finalName>menu</finalName>
+							<shadedArtifactAttached>true</shadedArtifactAttached>
+							<shadedClassifierName>menumain</shadedClassifierName>
+							<transformers>
+								<transformer
+									implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+									<mainClass>org.esialb.edison.sfo.Menu</mainClass>
+								</transformer>
+							</transformers>
 						</configuration>
 					</execution>
 				</executions>
