@@ -32,6 +32,7 @@ public class SFOled {
 				NarSystem.loadLibrary();
 				begin0();
 			} catch(Throwable t) {
+				t.printStackTrace();
 				swing = new OledSwing();
 				swing.setVisible(true);
 			}
