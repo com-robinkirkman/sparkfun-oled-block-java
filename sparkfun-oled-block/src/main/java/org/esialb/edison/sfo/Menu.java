@@ -19,13 +19,6 @@ public class Menu {
 		if(args.length == 0)
 			System.exit(-1);
 		
-		OutputStream nop = new OutputStream() {
-			@Override
-			public void write(int b) throws IOException {
-			}
-		};
-		System.setErr(new PrintStream(nop));
-		
 		Menu menu = new Menu();
 		for(String arg : args) {
 			menu.add(new MenuItem(arg, (b, i) ->  {
