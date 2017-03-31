@@ -5,6 +5,9 @@ import java.awt.Font;
 import java.awt.FontMetrics;
 import java.awt.Graphics2D;
 import java.awt.Image;
+import java.io.IOException;
+import java.io.OutputStream;
+import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -12,6 +15,28 @@ import java.util.List;
 import org.esialb.edison.sfo.SFOled.Button;
 
 public class Menu {
+	public static void main(String[] args) {
+		if(args.length == 0)
+			System.exit(-1);
+		
+		OutputStream nop = new OutputStream() {
+			@Override
+			public void write(int b) throws IOException {
+			}
+		};
+		System.setErr(new PrintStream(nop));
+		
+		Menu menu = new Menu();
+		for(String arg : args) {
+			menu.add(new MenuItem(arg, (b, i) ->  {
+				System.out.print(arg);
+				return true;
+			}));
+		}
+		menu.show();
+		System.exit(0);
+	}
+	
 	protected List<MenuItem> items = new ArrayList<>();
 	
 	protected int top;
