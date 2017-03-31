@@ -53,6 +53,9 @@ public class MenuItem {
 	}
 	
 	public boolean perform(Button b) {
-		return actions.getOrDefault(b, RETURN).perform(b, this);
+		MenuAction action = actions.get(b);
+		if(action == null)
+			action = RETURN;
+		return action.perform(b, this);
 	}
 }

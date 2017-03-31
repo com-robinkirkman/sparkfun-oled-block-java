@@ -58,7 +58,7 @@ public class SFOled {
 		for(;;) {
 			now = pressed(now);
 			for(Button b : Button.values()) {
-				if(prev.getOrDefault(b, false) && !now.get(b))
+				if(prev.containsKey(b) && prev.get(b) && !now.get(b))
 					return b;
 			}
 			Map<Button, Boolean> tmp = prev;
