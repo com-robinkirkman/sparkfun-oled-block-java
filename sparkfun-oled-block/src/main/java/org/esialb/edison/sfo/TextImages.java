@@ -54,6 +54,12 @@ public class TextImages {
 			idx++;
 		current += text.charAt(idx++);
 		while(idx < text.length()) {
+			if(text.charAt(idx) == '\n') {
+				lines.add(current);
+				current = "";
+				idx++;
+				continue;
+			}
 			if(Character.isWhitespace(text.charAt(idx))) {
 				if(!isOverrun(current + " ", width))
 					current += " ";
