@@ -66,9 +66,9 @@ public class I2COled {
 	private static final short SSD1306_VERTICAL_AND_RIGHT_HORIZONTAL_SCROLL = 0x29;
 	private static final short SSD1306_VERTICAL_AND_LEFT_HORIZONTAL_SCROLL = 0x2A;
 
-	private I2c i2c;
-	private byte[] buffer;
-	private Runnable select;
+	protected I2c i2c;
+	protected byte[] buffer;
+	protected Runnable select;
 
 	protected void select() {
 		if(select != null)
