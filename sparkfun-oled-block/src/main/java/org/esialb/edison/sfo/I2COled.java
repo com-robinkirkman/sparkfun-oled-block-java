@@ -4,6 +4,7 @@ import java.awt.Font;
 import java.awt.FontMetrics;
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
+import java.util.Arrays;
 
 import mraa.I2c;
 
@@ -96,6 +97,13 @@ public class I2COled {
 				OledDataBuffer dataBuffer = (OledDataBuffer) getRaster().getDataBuffer();
 				System.arraycopy(dataBuffer.getBuffer(), 0, buffer, 0, BUFFER_SIZE);
 				display();
+			}
+			
+			@Override
+			public boolean shouldPaint() {
+				byte[] imageBuffer = ((OledDataBuffer) getRaster().getDataBuffer()).getBuffer();
+				byte[] oledBuffer = buffer;
+				return !Arrays.equals(imageBuffer, oledBuffer);
 			}
 		};
 	}

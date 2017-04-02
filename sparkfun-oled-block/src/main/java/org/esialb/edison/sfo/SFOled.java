@@ -2,6 +2,7 @@ package org.esialb.edison.sfo;
 
 import java.awt.image.BufferedImage;
 import java.awt.image.IndexColorModel;
+import java.util.Arrays;
 import java.util.EnumMap;
 import java.util.Map;
 import java.util.Set;
@@ -24,6 +25,14 @@ public class SFOled {
 				OledDataBuffer dataBuffer = (OledDataBuffer) getRaster().getDataBuffer();
 				SFOled.write(dataBuffer.getBuffer());
 				SFOled.display();
+			}
+			
+			@Override
+			public boolean shouldPaint() {
+				byte[] imageBuffer = ((OledDataBuffer) getRaster().getDataBuffer()).getBuffer();
+				byte[] oledBuffer = new byte[BUFFER_SIZE];
+				SFOled.read(oledBuffer);
+				return !Arrays.equals(imageBuffer, oledBuffer);
 			}
 		};
 	}

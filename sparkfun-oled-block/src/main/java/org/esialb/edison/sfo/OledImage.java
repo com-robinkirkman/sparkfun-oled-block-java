@@ -5,6 +5,7 @@ import java.awt.image.IndexColorModel;
 
 public abstract class OledImage extends BufferedImage {
 	
+	public abstract boolean shouldPaint();
 	public abstract void paint();
 	
 	public OledImage(int width, int height) {
