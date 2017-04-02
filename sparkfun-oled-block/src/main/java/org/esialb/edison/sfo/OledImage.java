@@ -3,17 +3,15 @@ package org.esialb.edison.sfo;
 import java.awt.image.BufferedImage;
 import java.awt.image.IndexColorModel;
 
-public class OledImage extends BufferedImage {
-	public OledImage() {
+public abstract class OledImage extends BufferedImage {
+	
+	public abstract void paint();
+	
+	public OledImage(int width, int height) {
 		super(new IndexColorModel(1, 2, new byte[] {0, -1}, new byte[] {0,-1}, new byte[] {0,-1}), 
-				new OledRaster(), 
+				new OledRaster(width, height), 
 				true, 
 				null);
 	}
 	
-	public void paint() {
-		OledDataBuffer dataBuffer = (OledDataBuffer) getRaster().getDataBuffer();
-		SFOled.write(dataBuffer.getBuffer());
-		SFOled.display();
-	}
 }

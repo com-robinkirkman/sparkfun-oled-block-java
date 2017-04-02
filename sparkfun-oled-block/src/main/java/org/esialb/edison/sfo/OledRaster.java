@@ -6,7 +6,7 @@ import java.awt.image.MultiPixelPackedSampleModel;
 import java.awt.image.WritableRaster;
 
 public class OledRaster extends WritableRaster {
-	public OledRaster() {
-		super(OledSampleModel.get(), new OledDataBuffer(), new Point(0, 0));
+	public OledRaster(int width, int height) {
+		super(new OledSampleModel(width, height), new OledDataBuffer(width * height / 8), new Point(0, 0));
 	}
 }

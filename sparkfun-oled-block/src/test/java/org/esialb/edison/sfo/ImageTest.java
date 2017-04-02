@@ -13,7 +13,7 @@ public class ImageTest {
 	
 //	@Test
 	public void testOval() throws Exception {
-		OledImage image = new OledImage();
+		OledImage image = SFOled.createImage();
 		Graphics2D g = image.createGraphics();
 		g.setColor(Color.WHITE);
 		g.drawOval(0, 0, SFOled.WIDTH, SFOled.HEIGHT);

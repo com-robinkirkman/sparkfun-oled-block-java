@@ -11,7 +11,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 public class OledSwing extends JFrame {
-	private OledImage image = new OledImage();
+	private OledImage image = SFOled.createImage();
 	private byte[] buffer = new byte[SFOled.BUFFER_SIZE];
 	
 	private volatile boolean up, down, left, right, select, a, b;

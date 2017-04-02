@@ -5,14 +5,9 @@ import java.awt.image.MultiPixelPackedSampleModel;
 import java.awt.image.SampleModel;
 
 public class OledSampleModel extends SampleModel {
-	private static OledSampleModel instance = new OledSampleModel();
-	public static OledSampleModel get() {
-		return instance;
-	}
 	
-	
-	private OledSampleModel() {
-		super(DataBuffer.TYPE_BYTE, SFOled.WIDTH, SFOled.HEIGHT, 1);
+	public OledSampleModel(int width, int height) {
+		super(DataBuffer.TYPE_BYTE, width, height, 1);
 	}
 
 
@@ -25,7 +20,7 @@ public class OledSampleModel extends SampleModel {
 	@Override
 	public Object getDataElements(int x, int y, Object obj, DataBuffer data) {
 		byte[] b = (obj != null) ? (byte[]) obj : new byte[1];
-		int idx = x + SFOled.WIDTH * (y / 8);
+		int idx = x + width * (y / 8);
 		b[0] = (byte) data.getElem(idx);
 		b[0] = (byte) ((b[0] >> (y % 8)) & 1);
 		return b;
@@ -34,7 +29,7 @@ public class OledSampleModel extends SampleModel {
 
 	@Override
 	public void setDataElements(int x, int y, Object obj, DataBuffer data) {
-		int idx = x + SFOled.WIDTH * (y / 8);
+		int idx = x + width * (y / 8);
 		byte b = ((byte[]) obj)[0];
 		int mask = 1 << (y % 8);
 		int elem = data.getElem(idx);
@@ -48,14 +43,14 @@ public class OledSampleModel extends SampleModel {
 
 	@Override
 	public int getSample(int x, int y, int b, DataBuffer data) {
-		int idx = x + SFOled.WIDTH * (y / 8);
+		int idx = x + width * (y / 8);
 		return (data.getElem(idx) >>> (y % 8)) & 1;
 	}
 
 
 	@Override
 	public void setSample(int x, int y, int b, int s, DataBuffer data) {
-		int idx = x + SFOled.WIDTH * (y / 8);
+		int idx = x + width * (y / 8);
 		int elem = data.getElem(idx);
 		int mask = 1 << (y % 8);
 		if(s == 0)
@@ -68,8 +63,7 @@ public class OledSampleModel extends SampleModel {
 
 	@Override
 	public SampleModel createCompatibleSampleModel(int w, int h) {
-		// TODO Auto-generated method stub
-		return null;
+		return new OledSampleModel(w, h);
 	}
 
 

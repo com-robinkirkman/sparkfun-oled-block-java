@@ -6,9 +6,9 @@ public class OledDataBuffer extends DataBuffer {
 	
 	private byte[] buffer;
 	
-	public OledDataBuffer() {
-		super(TYPE_BYTE, SFOled.BUFFER_SIZE);
-		buffer = new byte[SFOled.BUFFER_SIZE];
+	public OledDataBuffer(int size) {
+		super(TYPE_BYTE, size);
+		buffer = new byte[size];
 	}
 	
 	@Override

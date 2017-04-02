@@ -17,6 +17,17 @@ public class SFOled {
 		UP, DOWN, LEFT, RIGHT, SELECT, A, B,
 	}
 	
+	public static OledImage createImage() {
+		return new OledImage(WIDTH, HEIGHT) {
+			@Override
+			public void paint() {
+				OledDataBuffer dataBuffer = (OledDataBuffer) getRaster().getDataBuffer();
+				SFOled.write(dataBuffer.getBuffer());
+				SFOled.display();
+			}
+		};
+	}
+
 	private static OledSwing swing = null;
 	
 	public static boolean isSwing() {

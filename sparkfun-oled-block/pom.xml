@@ -82,5 +82,10 @@
 			<artifactId>native-lib-loader</artifactId>
 			<version>2.1.4</version>
 		</dependency>
+		<dependency>
+			<groupId>io.mraa</groupId>
+			<artifactId>mraa</artifactId>
+			<version>1.5.1</version>
+		</dependency>
 	</dependencies>
 </project>

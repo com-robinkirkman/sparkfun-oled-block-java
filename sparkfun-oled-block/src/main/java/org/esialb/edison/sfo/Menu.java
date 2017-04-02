@@ -49,7 +49,7 @@ public class Menu {
 	public int show() {
 		byte[] screenWas = new byte[SFOled.BUFFER_SIZE];
 		SFOled.read(screenWas);
-		OledImage image = new OledImage();
+		OledImage image = SFOled.createImage();
 		Graphics2D g = image.createGraphics();
 		for(;;) {
 			g.setColor(Color.BLACK);
