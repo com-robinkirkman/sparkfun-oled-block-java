@@ -43,7 +43,14 @@ public class MultiOledImage extends OledImage {
 
 	@Override
 	public void paint() {
-		paint(true);
+		for(Entry<OledImage, int[]> e : backing.entrySet()) {
+			OledImage oled = e.getKey();
+			int x = e.getValue()[0];
+			int y = e.getValue()[1];
+			oled.createGraphics().drawImage(this, -x, -y, null);
+			if(oled.shouldPaint())
+				oled.paint();
+		}
 	}
 
 }
