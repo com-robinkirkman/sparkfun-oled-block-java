@@ -8,7 +8,7 @@ import java.util.Arrays;
 
 import mraa.I2c;
 
-public class I2COled {
+public class I2cOled {
 	public static final int WIDTH = 128;
 	public static final int HEIGHT = 64;
 	public static final int BUFFER_SIZE = 1024;
@@ -76,11 +76,11 @@ public class I2COled {
 			select.run();
 	}
 	
-	public I2COled(I2c i2c) {
+	public I2cOled(I2c i2c) {
 		this(i2c, null);
 	}
 	
-	public I2COled(I2c i2c, Runnable select) {
+	public I2cOled(I2c i2c, Runnable select) {
 		this.i2c = i2c;
 		this.select = select;
 		buffer = new byte[BUFFER_SIZE];
