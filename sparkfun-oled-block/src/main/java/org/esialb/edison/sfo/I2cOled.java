@@ -115,7 +115,7 @@ public class I2cOled {
 		i2c.write(b);
 	}
 
-	public void begin() {
+	public I2cOled begin() {
 		select();
 		// Init sequence
 		ssd1306_command(SSD1306_DISPLAYOFF);                    // 0xAE
@@ -152,9 +152,10 @@ public class I2cOled {
 
 		ssd1306_command(SSD1306_DISPLAYON);//--turn on oled panel
 
+		return this;
 	}
 
-	public void display() {
+	public I2cOled display() {
 		select();
 		ssd1306_command(SSD1306_COLUMNADDR);
 		ssd1306_command(0);   // Column start address (0 = reset)
@@ -180,15 +181,19 @@ public class I2cOled {
 			i2c.address(SSD1306_I2C_ADDRESS);
 			i2c.write(b);
 		}
+		
+		return this;
 	}
 	
-	public void displayOff() {
+	public I2cOled displayOff() {
 		select();
 		ssd1306_command(SSD1306_DISPLAYOFF);
+		return this;
 	}
 	
-	public void displayOn() {
+	public I2cOled displayOn() {
 		select();
 		ssd1306_command(SSD1306_DISPLAYON);
+		return this;
 	}
 }
