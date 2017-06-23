@@ -75,11 +75,14 @@ public class Menu {
 			g.setColor(Color.BLACK);
 			g.fillRect(0, 0, image.getWidth(), image.getHeight());
 			if(title != null) {
-				BufferedImage ti = TextImages.createUnwrapped(title, Color.WHITE);
-				g.drawImage(ti, (image.getWidth() - ti.getWidth()) / 2, -1, null);
 				g.setColor(Color.WHITE);
-				for(int x = 0; x < image.getWidth(); x += 2)
-					g.drawRect(x, 7, 0, 0);
+				for(int y = 0; y < 8; y+=2)
+					g.drawRect(0, y, image.getWidth(), 0);
+				BufferedImage ti = TextImages.createUnwrapped(title, Color.WHITE);
+				g.setColor(Color.BLACK);
+				g.fillRect((image.getWidth() - ti.getWidth()) / 2 -1, -1, ti.getWidth() + 3, 8);
+				g.drawImage(ti, (image.getWidth() - ti.getWidth()) / 2, -1, null);
+				
 			}
 			for(int i = top; i < Math.min(top + items.size(), top + MAX_ITEMS); i++) {
 				Color c = Color.WHITE;
