@@ -25,6 +25,9 @@ public class Menu {
 			SFOled.begin();
 		}
 		
+		if(args.length == 0)
+			System.exit(-1);
+		
 		String title = null;
 		if("-t".equals(args[0])) {
 			if(args.length < 2)
