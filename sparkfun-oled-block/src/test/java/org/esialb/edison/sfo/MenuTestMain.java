@@ -8,7 +8,7 @@ public class MenuTestMain {
 	public static void main(String[] args) {
 		Menu menu = new Menu();
 		for(int i = 0; i < 10; i++) {
-			final Menu menu2 = new Menu();
+			final Menu menu2 = new Menu("Submenu " + i);
 			for(int j = 0; j < 10; j++) {
 				menu2.add(new MenuItem("item " + i + j, MenuItem.RETURN));
 			}
