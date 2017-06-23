@@ -20,6 +20,11 @@ public class Menu {
 		if(args.length == 0)
 			System.exit(-1);
 		
+		if("-b".equals(args[0])) {
+			args = Arrays.copyOfRange(args, 1, args.length);
+			SFOled.begin();
+		}
+		
 		String title = null;
 		if("-t".equals(args[0])) {
 			if(args.length < 2)

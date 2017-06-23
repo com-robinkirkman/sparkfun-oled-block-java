@@ -50,7 +50,6 @@ public class SFOled {
 		} else {
 			try {
 				NarSystem.loadLibrary();
-				begin0();
 			} catch(Throwable t) {
 				t.printStackTrace();
 				swing = new OledSwing();
@@ -90,6 +89,8 @@ public class SFOled {
 			}
 		}
 	}
+	
+	public static void begin() { if(swing == null) begin0(); }
 	
 	public static boolean isUpPressed() { return swing != null ? swing.isUp() : isUpPressed0(); }
 	public static boolean isDownPressed() { return swing != null ? swing.isDown() : isDownPressed0(); }
