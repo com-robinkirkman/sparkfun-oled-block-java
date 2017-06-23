@@ -21,10 +21,12 @@ public class Menu {
 			System.exit(-1);
 		
 		String title = null;
-		if("-t".equals(args[0]) && args.length < 2)
-			System.exit(-1);
-		title = args[1];
-		args = Arrays.copyOfRange(args, 2, args.length);
+		if("-t".equals(args[0])) {
+			if(args.length < 2)
+				System.exit(-1);
+			title = args[1];
+			args = Arrays.copyOfRange(args, 2, args.length);
+		}
 		
 		if(args.length == 0)
 			System.exit(-1);
